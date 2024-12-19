@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras de Divisas</title>
+</head>
+<body>
+<h1>Gestión de Compras de Divisas</h1>
+<form action="/api/divisa" method="post">
+    <label>Moneda Origen: </label><input type="text" name="monedaOrigen"><br>
+    <label>Moneda Destino: </label><input type="text" name="monedaDestino"><br>
+    <label>Monto: </label><input type="number" name="monto"><br>
+    <label>Tasa: </label><input type="number" name="tasa"><br>
+    <button type="submit">Guardar</button>
+</form>
+<div id="listaDivisas"></div>
+</body>
+</html>
