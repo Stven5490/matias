@@ -9,9 +9,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/divisa")
-public class divisasController {
+public class divisaController {
     private final divisaService service;
-    public divisasController(divisaService service) {
+    public divisaController(divisaService service) {
         this.service = service;
     }
     @GetMapping

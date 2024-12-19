@@ -1,5 +1,7 @@
 package com.ecsa.divisas.service;
 
+import com.ecsa.divisas.model.divisa;
+import com.ecsa.divisas.repository.divisaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,16 +14,16 @@ public class divisaService {
     public divisaService(divisaRepository repository) {
         this.repository = repository;
     }
-    public List<divisas> listar() {
+    public List<divisa> listar() {
         return repository.findAll();
     }
-    public divisas guardar (divisas divisas) {
+    public divisa guardar (divisa divisas) {
         return repository.save(divisas);
     }
     public void eliminar(Long id) {
         repository.deleteById(id);
     }
-    public Optional<divisas> obtenerPorId(Long id) {
+    public Optional<divisa> obtenerPorId(Long id) {
         return repository.findById(id);
     }
 }

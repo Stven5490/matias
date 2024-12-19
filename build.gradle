@@ -1,14 +1,19 @@
 plugins {
-    id 'java'
+    id 'application'
 }
-
+application {
+    mainClass = 'com.ecsa.divisas.application'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': application.mainClass.get()
+    }
+}
 group = 'ecsa.corp'
 version = '1.0.0'
-
 repositories {
     mavenCentral()
 }
-
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
@@ -19,7 +24,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security:3.2.8'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.3.1'
 }
-
 test {
     useJUnitPlatform()
 }

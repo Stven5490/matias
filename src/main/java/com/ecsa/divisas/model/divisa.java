@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "com.ecsa.divisas.model.divisa")
+@Table(name = "divisas")
 public class divisa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
