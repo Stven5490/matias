@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMX Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Bienvenido a CMX</h1>
+<p>Selecciona un módulo para continuar</p>
+<button onclick="navigateTo('currencyPurchase')">Compra/Venta de Divisas</button>
+<button onclick="showUnderConstruction()">Otro Módulo</button>
+<button onclick="showUnderConstruction()">Gestión de Usuarios</button>
+<button onclick="showUnderConstruction()">Reportes</button>
+
+<script>
+    function navigateTo(module) {
+        if (module === 'currencyPurchase') {
+            window.location.href = '/currency-purchase'; // Ruta del módulo de compra de divisas
+        }
+    }
+    function showUnderConstruction() {
+        alert("En construcción");
+    }
+</script>
+</body>
+</html>
