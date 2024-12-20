@@ -1,4 +1,4 @@
-package com.ecsa.divisas.controller;
+package com.ecsa.divisas.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
