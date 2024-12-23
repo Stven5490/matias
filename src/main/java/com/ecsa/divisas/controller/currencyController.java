@@ -1,32 +1,29 @@
 package com.ecsa.divisas.controller;
 
-import com.ecsa.divisas.model.currency;
-import com.ecsa.divisas.repository.currencyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ecsa.divisas.model.currencyModel;
+import com.ecsa.divisas.service.currencyService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/currencies")
+@RequestMapping("/api/currencies")
 public class currencyController {
-    @Autowired
-    private currencyRepository currencyRepository;
+    private final currencyService currencyService;
+
+    public currencyController(com.ecsa.divisas.service.currencyService currencyService) {
+        this.currencyService = currencyService;
+    }
     @GetMapping
-    public List<currency> getAllCurrencies() {
-        return currencyRepository.findAll();
+    public List<currencyModel> getAllCurrencies(){
+        return currencyService.findAll();
     }
     @PostMapping
-    public currency createCurrency(@RequestBody currency currency) {
-        return currencyRepository.save(currency);
-    }
-    @PutMapping("/{id}")
-    public currency updateCurrency(@PathVariable Long id, @RequestBody currency currency) {
-        currency.setId(id);
-        return currencyRepository.save(currency);
+    public currencyModel createCurrency(@RequestBody currencyModel currencyModel){
+        return currencyService.save(currencyModel);
     }
     @DeleteMapping("/{id}")
-    public void deleteCurrency(@PathVariable Long id) {
-        currencyRepository.deleteById(id);
+    public void deleteCurrency(@PathVariable Long id){
+        currencyService.deleteById(id);
     }
 }
