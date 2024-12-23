@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class currency {
+public class currencyModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
